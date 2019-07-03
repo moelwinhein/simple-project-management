@@ -4,10 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProjectInputComponent } from './project/project-input/project-input.component';
-import { ProjectDetailComponent } from './project/project-detail/project-detail.component';
-import { TopicInputComponent } from './topic/topic-input/topic-input.component';
-import { TopicDetailComponent } from './topic/topic-detail/topic-detail.component';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +14,7 @@ import { TopicDetailComponent } from './topic/topic-detail/topic-detail.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
