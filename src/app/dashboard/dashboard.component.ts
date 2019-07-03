@@ -12,4 +12,15 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
+  onLinkClick(linkName) {
+    console.log('clicked: ', linkName);
+    switch (linkName) {
+      case 'projects':
+        break;
+      case 'topics':
+        break;
+      default:
+    }
+  }
+
 }
