@@ -1,5 +1,39 @@
 <app-nav></app-nav>
 <div class="container">
   <app-sidebar (linkClick)="onLinkClick($event)"></app-sidebar>
-  <p>dashboard works!</p>
+  <div class="main">
+    <div class="empty-data" *ngIf="selectedService === 'projects' && projects.length <= 0 && !isLoading">
+      <p>No project to display.</p>
+    </div>
+    <div class="empty-data" *ngIf="selectedService === 'topics' && topics.length <= 0 && !isLoading">
+      <p>No topic to display.</p>
+    </div>
+    <div *ngIf="isLoading" class="loading">
+      <span>Loading ...</span>
+    </div>
+    <table *ngIf="selectedService === 'projects' && projects.length > 0 && !isLoading">
+      <tr class="header">
+        <th class="align-left">Project Name</th>
+        <th class="align-left">Project Code</th>
+        <th class="align-right">Progress</th>
+      </tr>
+      <tr *ngFor="let project of projects" class="detail" (click)="onProjectRowClick(project.projectCode)">
+        <td class="align-left">{{ project.projectName }}</td>
+        <td class="align-left">{{ project.projectCode }}</td>
+        <td class="align-right">{{ project.progress }}</td>
+      </tr>
+    </table>
+    <table *ngIf="selectedService === 'topics' && topics.length > 0 && !isLoading">
+      <tr class="header">
+        <th class="align-left">Topic Name</th>
+        <th class="align-left">Topic Code</th>
+        <th class="align-right">Progress</th>
+      </tr>
+      <tr *ngFor="let topic of topics" class="detail" (click)="onTopicRowClick(topic.topicCode)">
+        <td class="align-left">{{ topic.topicName }}</td>
+        <td class="align-left">{{ topic.topicCode }}</td>
+        <td class="align-right">{{ topic.progress }}</td>
+      </tr>
+    </table>
+  </div>
 </div>

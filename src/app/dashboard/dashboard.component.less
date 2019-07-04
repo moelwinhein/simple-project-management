@@ -1,1 +1,42 @@
 @import '../common/common';
+
+.main {
+  width: 100%;
+  padding: 16px;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+      cursor: pointer;
+
+      &.header {
+        background: #E6E8EA;
+      }
+      &.detail:hover {
+        background-color: #f2f2f2;
+      }
+    }
+
+    th, td {
+      padding: 8px;
+    }
+  }
+
+  .align-left {
+    text-align: left;
+  }
+
+  .align-right {
+    text-align: right;
+  }
+
+  .align-center {
+    text-align: center;
+  }
+
+  .loading {
+    margin-bottom: 16px;
+  }
+}
